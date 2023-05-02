@@ -1,0 +1,158 @@
+ create database ahorra_marcket;
+ 
+ Use ahorra_marcket;
+
+create  table producto(
+  id_producto int identity (1,1) not null  Primary key,
+  nombre  varchar (60) not null unique,
+  fecha_ing  datetime not null default(getdate())
+ 
+  );
+
+insert into  producto (nombre) values (' Arroz');
+insert into  producto (nombre) values ('Frijoles');
+insert into  producto (nombre) values ('Azucar');
+insert into  producto (nombre) values ('Aceite vegetal');
+insert into  producto (nombre) values ('Harina de trigo');
+insert into  producto (nombre) values ('Leche');
+insert into  producto (nombre) values ('Huevos');
+insert into  producto (nombre) values ('Carne de res');
+insert into  producto (nombre) values ('Pan');
+insert into  producto (nombre) values ('Verduras');
+insert into  producto (nombre) values ('Sal');
+
+
+
+  create table   tienda (
+  id_tienda  int identity (1,1) not null primary key,
+  nombre varchar (60) not null ,
+   fecha_ing  datetime not null default(getdate())
+
+  );
+
+insert into  tienda (nombre) values('Exito');
+insert into  tienda (nombre) values('Carulla');
+insert into  tienda (nombre) values('Olímpica');
+insert into  tienda (nombre) values('D1');
+insert into  tienda (nombre) values('Surtimax');
+insert into  tienda (nombre) values('Ara');
+insert into  tienda (nombre) values('La 14');
+insert into  tienda (nombre) values('Justo & Bueno');
+
+
+    create table   producto_tienda (
+   id_producto_tienda  int identity (1,1) not null primary key,
+   id_tienda int not null,
+   FOREIGN KEY (id_tienda) REFERENCES tienda(id_tienda),
+    id_producto int not null,
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto),
+	precio float not null,
+	 fecha_ing  datetime not null default(getdate())
+	);
+
+insert into producto_tienda (id_producto,id_tienda,precio) values(1 ,1 ,1200);
+insert into producto_tienda (id_producto,id_tienda,precio) values(2 ,2 ,1582);
+insert into producto_tienda (id_producto,id_tienda,precio) values(3 ,3 ,1254);
+insert into producto_tienda (id_producto,id_tienda,precio) values(4 ,5 ,4855);
+insert into producto_tienda (id_producto,id_tienda,precio) values(5 ,6 ,2588);
+insert into producto_tienda (id_producto,id_tienda,precio) values(6 ,7 ,13125);
+insert into producto_tienda (id_producto,id_tienda,precio) values(7 ,5 ,548985);
+insert into producto_tienda (id_producto,id_tienda,precio) values(8 ,8 ,955);
+insert into producto_tienda (id_producto,id_tienda,precio) values(9 ,7 ,11645);
+insert into producto_tienda (id_producto,id_tienda,precio) values(10 ,4 ,56465);
+insert into producto_tienda (id_producto,id_tienda,precio) values(11 ,1 ,21596);
+insert into producto_tienda (id_producto,id_tienda,precio) values(1 ,2 ,5645);
+insert into producto_tienda (id_producto,id_tienda,precio) values(2 ,3 ,15612);
+insert into producto_tienda (id_producto,id_tienda,precio) values(3 ,5 ,12355);
+insert into producto_tienda (id_producto,id_tienda,precio) values(4 ,6 ,56456);
+insert into producto_tienda (id_producto,id_tienda,precio) values(5 ,7 ,54658);
+insert into producto_tienda (id_producto,id_tienda,precio) values(6 ,5 ,56465);
+insert into producto_tienda (id_producto,id_tienda,precio) values(7 ,8 ,5112);
+insert into producto_tienda (id_producto,id_tienda,precio) values(8 ,5 ,2135);
+insert into producto_tienda (id_producto,id_tienda,precio) values(9 ,4 ,5165);
+insert into producto_tienda (id_producto,id_tienda,precio) values(10 ,2 ,56465);
+insert into producto_tienda (id_producto,id_tienda,precio) values(11 ,6 ,546565);
+insert into producto_tienda (id_producto,id_tienda,precio) values(1 ,1 ,1235);
+insert into producto_tienda (id_producto,id_tienda,precio) values(2 ,2 ,1564);
+insert into producto_tienda (id_producto,id_tienda,precio) values(3 ,3 ,54654);
+insert into producto_tienda (id_producto,id_tienda,precio) values(4 ,5 ,564561);
+insert into producto_tienda (id_producto,id_tienda,precio) values(5 ,6 ,879861);
+insert into producto_tienda (id_producto,id_tienda,precio) values(6 ,7 ,984894);
+insert into producto_tienda (id_producto,id_tienda,precio) values(7 ,5 ,65485);
+insert into producto_tienda (id_producto,id_tienda,precio) values(8 ,8 ,1235);
+insert into producto_tienda (id_producto,id_tienda,precio) values(9 ,5 ,8465);
+insert into producto_tienda (id_producto,id_tienda,precio) values(10 ,2 ,546548);
+insert into producto_tienda (id_producto,id_tienda,precio) values(11 ,3 ,8445);
+insert into producto_tienda (id_producto,id_tienda,precio) values(1 ,1 ,5648);
+insert into producto_tienda (id_producto,id_tienda,precio) values(2 ,2 ,5465);
+insert into producto_tienda (id_producto,id_tienda,precio) values(3 ,3 ,456456);
+insert into producto_tienda (id_producto,id_tienda,precio) values(4 ,5 ,5456);
+insert into producto_tienda (id_producto,id_tienda,precio) values(5 ,6 ,156168);
+insert into producto_tienda (id_producto,id_tienda,precio) values(6 ,7 ,25645);
+insert into producto_tienda (id_producto,id_tienda,precio) values(7 ,5 ,54658);
+insert into producto_tienda (id_producto,id_tienda,precio) values(8 ,8 ,54564);
+insert into producto_tienda (id_producto,id_tienda,precio) values(9 ,3 ,54564);
+insert into producto_tienda (id_producto,id_tienda,precio) values(10 ,4 ,4885);
+insert into producto_tienda (id_producto,id_tienda,precio) values(11 ,8 ,5644);
+insert into producto_tienda (id_producto,id_tienda,precio) values(1 ,7 ,8484);
+insert into producto_tienda (id_producto,id_tienda,precio) values(2 ,1 ,54546);
+insert into producto_tienda (id_producto,id_tienda,precio) values(3 ,2 ,1235);
+insert into producto_tienda (id_producto,id_tienda,precio) values(4 ,3 ,54654);
+insert into producto_tienda (id_producto,id_tienda,precio) values(5 ,5 ,12315);
+insert into producto_tienda (id_producto,id_tienda,precio) values(6 ,6 ,54654);
+insert into producto_tienda (id_producto,id_tienda,precio) values(7 ,7 ,231325);
+insert into producto_tienda (id_producto,id_tienda,precio) values(8 ,5 ,5456);
+insert into producto_tienda (id_producto,id_tienda,precio) values(9 ,8 ,564564);
+insert into producto_tienda (id_producto,id_tienda,precio) values(10 ,4 ,55548);
+insert into producto_tienda (id_producto,id_tienda,precio) values(11 ,1 ,56458);
+insert into producto_tienda (id_producto,id_tienda,precio) values(1 ,5 ,546548);
+insert into producto_tienda (id_producto,id_tienda,precio) values(2 ,1 ,8484);
+insert into producto_tienda (id_producto,id_tienda,precio) values(3 ,2 ,54886);
+insert into producto_tienda (id_producto,id_tienda,precio) values(4 ,3 ,66448);
+insert into producto_tienda (id_producto,id_tienda,precio) values(5 ,5 ,45548);
+insert into producto_tienda (id_producto,id_tienda,precio) values(6 ,6 ,65548);
+insert into producto_tienda (id_producto,id_tienda,precio) values(7 ,7 ,5488);
+insert into producto_tienda (id_producto,id_tienda,precio) values(8 ,5 ,4456548);
+insert into producto_tienda (id_producto,id_tienda,precio) values(9 ,8 ,54485);
+insert into producto_tienda (id_producto,id_tienda,precio) values(10 ,2 ,84848);
+insert into producto_tienda (id_producto,id_tienda,precio) values(11 ,5 ,5548486);
+
+
+	create table usuarios (
+	 id_user  int identity (1,1) not null primary key,
+    nombre varchar(120) not null,
+	pass text not null,
+	 fecha_ing  datetime not null default(getdate())
+	);
+
+insert into usuarios (nombre,pass) values('FELIPE','f123456789r');
+insert into usuarios (nombre,pass) values('PRUEBA','f1234r');
+insert into usuarios (nombre,pass) values('PRUEBA02','f123789r');
+insert into usuarios (nombre,pass) values('USERF','U12789r');
+
+
+	create table perfiles  (
+	  id_perfil  int identity (1,1) not null primary key,
+      nombre varchar(120) not null
+	);
+insert  into  perfiles (nombre) values ('ADMIN');
+
+
+	create table usuarios_perfiles (
+	id_user_perf int identity (1,1) not null primary key,
+	 id_perfil int not null,
+   FOREIGN KEY (id_perfil) REFERENCES perfiles(id_perfil),
+    id_user int not null,
+    FOREIGN KEY (id_user) REFERENCES usuarios(id_user)
+	);
+
+	insert into  usuarios_perfiles (id_perfil,id_user) values (1,1);
+	insert into  usuarios_perfiles (id_perfil,id_user) values (1,3);
+
+
+
+SELECT B.nombre 'Producto', C.nombre 'Tienda', A.precio
+FROM producto_tienda A
+INNER JOIN producto B ON B.id_producto = A.id_producto
+INNER JOIN tienda C ON C.id_tienda = A.id_tienda  where b.nombre like '%huevo%' order by precio  desc
+
